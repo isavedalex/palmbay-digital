@@ -313,7 +313,7 @@ export function Header1() {
               Palm Bay Digital is a bespoke website design and development
               agency based in Margate, UK. We craft custom websites that help
               businesses and individuals stand out online. Ready to bring your
-              vision to life? Let's create something exceptional together.
+              vision to life? "Let&apos;s create something" exceptional together.
             </p>
             <div className="mt-6 flex flex-wrap gap-4 md:mt-8 text-white">
               <a href="https://form.typeform.com/to/UEaAB8BR" rel="noopener noreferrer">
