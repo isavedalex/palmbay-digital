@@ -301,7 +301,7 @@ void main() {
 
 export function Header1() {
   return (
-    <section id="relume" className="min-h-screen flex items-center px-[5%] pt-16 md:pt-0 bg-palmbay-bluebg">
+    <section id="relume" className="min-h-screen flex items-center justify-center px-[5%] py-16 md:py-0 bg-palmbay-bluebg">
       <div className="container">
         <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
           <div>
