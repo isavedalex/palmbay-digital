@@ -324,11 +324,11 @@ export function Header1() {
             </div>
           </div>
            <div className="w-full flex items-center justify-center">
-            <div className="max-w-[300px] w-full">
+            <div className="w-64 h-64 md:w-96 md:h-96 lg:max-w-md lg:w-full lg:h-auto">
               <RubikCube />
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </section>
   );
