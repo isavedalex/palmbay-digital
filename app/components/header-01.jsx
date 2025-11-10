@@ -294,7 +294,7 @@ void main() {
   return (
     <canvas 
       ref={canvasRef} 
-      className="w-full h-full min-h-[400px] md:min-h-[500px] max-w-[600px] mx-auto"
+      className="w-full h-full min-h-[256px] md:min-h-[400px]"
     />
   );
 }
