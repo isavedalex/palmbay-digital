@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@relume_io/relume-ui";
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 // Rubik's Cube WebGL Component
 function RubikCube() {
@@ -299,37 +300,105 @@ void main() {
   );
 }
 
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Delay between each child
+      delayChildren: 0.3,   // Initial delay before starting
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 20  // Start 20px below
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
+const cubeVariants = {
+  hidden: { 
+    opacity: 0, 
+    scale: 0.8,
+    rotateY: -30
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotateY: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  }
+};
+
+
+
 export function Header1() {
   return (
     <section id="relume" className="min-h-screen flex items-center justify-center px-[5%] py-16 md:py-0 bg-palmbay-bluebg">
-      <div className="container">
-        <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
+      <motion.div 
+        className="container"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center text-center lg:text-left">
           <div>
-            <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl text-white font-monument">
+            <motion.h1 
+              variants={itemVariants}
+              className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl text-white font-monument"
+            >
               PALM BAY DIGITAL
-            </h1>
-          
-            <p className="md:text-md text-white font-helvetica font-light">
+            </motion.h1>
+            
+            <motion.p 
+              variants={itemVariants}
+              className="md:text-md text-white font-helvetica font-light"
+            >
               Palm Bay Digital is a bespoke website design and development
               agency based in Margate, UK. We craft custom websites that help
               businesses and individuals stand out online. Ready to bring your
               vision to life? Let&apos;s create something exceptional together.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-4 md:mt-8 text-white">
-              <a href="https://form.typeform.com/to/UEaAB8BR" rel="noopener noreferrer">
-                <Button title="Work with us" className="bg-palmbay-pink border-palmbay-pink rounded-lg font-formula border-solid border-0 border-b-[4px] border-r-[4px] border-palmbay-darkpink">
+            </motion.p>
+            
+            <motion.div 
+              variants={itemVariants}
+              className="mt-6 flex flex-wrap gap-4 md:mt-8 text-white justify-center lg:justify-start"
+            >
+              <a href="https://form.typeform.com/to/UEaAB8BR" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  title="Work with us" 
+                  className="bg-palmbay-pink border-r-4 border-b-4 border-palmbay-darkpink rounded-lg"
+                >
                   Work with us
                 </Button>
               </a>
-            </div>
+            </motion.div>
           </div>
-           <div className="w-full flex items-center justify-center">
+          
+          <motion.div 
+            variants={cubeVariants}
+            className="w-full flex items-center justify-center"
+          >
             <div className="w-64 h-64 md:w-96 md:h-96 lg:max-w-md lg:w-full lg:h-auto">
               <RubikCube />
             </div>
-          </div>
-          </div>
-      </div>
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 }
