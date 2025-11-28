@@ -349,7 +349,7 @@ const cubeVariants = {
 export function Header1() {
   return (
     <section id="relume" className="min-h-screen flex items-center justify-center px-[5%] py-16 md:py-0 bg-palmbay-bluebg">
-      <motion.div 
+      <motion.div
         className="container"
         variants={containerVariants}
         initial="hidden"
@@ -357,30 +357,44 @@ export function Header1() {
       >
         <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center text-center lg:text-left">
           <div>
-            <motion.h1 
+            <motion.h1
               variants={itemVariants}
               className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl text-white font-monument"
             >
               PALM BAY DIGITAL
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.h2
+              variants={itemVariants}
+              className="md:text-md text-white font-helvetica font-light mb-4"
+            >
+              Website Designer in Margate, Kent | Bespoke Web Design Agency
+            </motion.h2>
+
+            <motion.p
               variants={itemVariants}
               className="md:text-md text-white font-helvetica font-light"
             >
-              Palm Bay Digital is a bespoke website design and development
-              agency based in Margate, UK. We craft custom websites that help
-              businesses and individuals stand out online. Ready to bring your
-              vision to life? Let&apos;s create something exceptional together.
+              Palm Bay Digital is a professional website design and development
+              agency based in Margate, UK. As experienced website designers, we specialise in
+              creating bespoke, high-converting websites for businesses across Kent and the UK.
+              From stunning web design to custom development, we craft digital experiences that
+              help your business stand out online. Ready to bring your vision to life?
+              Let&apos;s create something exceptional together.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               variants={itemVariants}
               className="mt-6 flex flex-wrap gap-4 md:mt-8 text-white justify-center lg:justify-start"
             >
-              <a href="https://form.typeform.com/to/UEaAB8BR" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  title="Work with us" 
+              <a
+                href="https://form.typeform.com/to/UEaAB8BR"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get a free website design consultation from Palm Bay Digital"
+              >
+                <Button
+                  title="Work with us - Get your free website design consultation"
                   className="bg-palmbay-pink border-r-4 border-b-4 border-palmbay-darkpink rounded-lg"
                 >
                   Work with us
@@ -388,10 +402,12 @@ export function Header1() {
               </a>
             </motion.div>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             variants={cubeVariants}
             className="w-full flex items-center justify-center"
+            role="img"
+            aria-label="Interactive 3D Rubik's cube animation showcasing Palm Bay Digital's web design creativity"
           >
             <div className="w-64 h-64 md:w-96 md:h-96 lg:max-w-md lg:w-full lg:h-auto">
               <RubikCube />
