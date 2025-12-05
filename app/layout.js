@@ -132,49 +132,6 @@ export default function RootLayout({ children }) {
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-
-        {/* Google Consent Mode V2 - Must load BEFORE other scripts */}
-        <Script id="google-consent-mode" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-
-            // Default consent to denied (Cookiebot will update based on user choice)
-            gtag('consent', 'default', {
-              'ad_storage': 'denied',
-              'ad_user_data': 'denied',
-              'ad_personalization': 'denied',
-              'analytics_storage': 'denied',
-              'wait_for_update': 500
-            });
-
-            gtag('set', 'ads_data_redaction', true);
-          `}
-        </Script>
-
-        {/* Cookiebot - Consent Management Platform */}
-        <Script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="ed02114d-19d7-4f2d-9139-7fd6e72c25c2"
-          data-blockingmode="auto"
-          type="text/javascript"
-          strategy="beforeInteractive"
-        />
-
-        {/* Google Tag Manager - Loads after consent */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17758304015"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17758304015');
-          `}
-        </Script>
       </head>
       <body className={`${averageFont.variable} ${nunitoSans.variable} antialiased`}>
         {children}
