@@ -125,6 +125,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Visitors Tracking Script */}
+        <Script
+          src="https://cdn.visitors.now/v.js"
+          data-token="af671606-66f8-4e3b-a358-b7d12b2a12af"
+          strategy="beforeInteractive"
+        />
         {/* Structured Data for SEO */}
         <Script
           id="structured-data"
