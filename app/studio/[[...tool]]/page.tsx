@@ -1,16 +1,9 @@
-"use client";
-
-import { NextStudio } from "next-sanity/studio";
-import config from "@/sanity.config";
+import Studio from "./Studio";
 
 export const dynamic = "force-static";
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  viewportFit: "cover",
-  interactiveWidget: "resizes-content",
-};
+
+export { metadata, viewport } from "next-sanity/studio";
 
 export default function StudioPage() {
-  return <NextStudio config={config} />;
+  return <Studio />;
 }
