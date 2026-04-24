@@ -55,6 +55,12 @@ export default defineConfig({
         previewMode: {
           enable: "/api/draft-mode/enable",
         },
+        allowOrigins: [
+          "https://palmbay.digital",
+          "https://www.palmbay.digital",
+          "https://*.vercel.app",
+          "http://localhost:3000",
+        ],
       },
       resolve,
     }),
