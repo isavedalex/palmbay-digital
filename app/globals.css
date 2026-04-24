@@ -1,21 +1,18 @@
-
 @font-face {
-  font-family: 'PP Monument Extended';
-  src: url('/fonts/PPMonumentExtended-Regular.woff2') format('woff2');
+  font-family: "PP Monument Extended";
+  src: url("/fonts/PPMonumentExtended-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-
 @font-face {
-  font-family: 'PP Formula';
-  src: url('/fonts/PPFormula-Medium.woff2') format('woff2');
+  font-family: "PP Formula";
+  src: url("/fonts/PPFormula-Medium.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-
 
 @tailwind base;
 @tailwind components;
@@ -43,4 +40,67 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotateY(-15deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+.animate-delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+.animate-delay-300 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+.animate-delay-400 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+.animate-delay-500 {
+  animation-delay: 0.5s;
+  opacity: 0;
 }
