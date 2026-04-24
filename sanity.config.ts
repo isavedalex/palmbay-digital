@@ -26,7 +26,8 @@ export default defineConfig({
               .title("SEO Health")
               .child(
                 createSeoHealthPane(S, {
-                  licenseKey: process.env.SEOFIELDS_LICENSE_KEY || "",
+                  licenseKey:
+                    process.env.NEXT_PUBLIC_SEOFIELDS_LICENSE_KEY || "",
                 }),
               ),
             S.divider(),
@@ -55,7 +56,7 @@ export default defineConfig({
     }),
     seofields({
       healthDashboard: {
-        licenseKey: process.env.SEOFIELDS_LICENSE_KEY || "",
+        licenseKey: process.env.NEXT_PUBLIC_SEOFIELDS_LICENSE_KEY || "",
       },
     }),
     searchConsolePlugin(),
