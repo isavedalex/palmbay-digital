@@ -5,6 +5,10 @@ import { schemaTypes } from "./sanity/schema";
 import { resolve } from "./sanity/presentation/resolve";
 import seofields, { createSeoHealthPane } from "sanity-plugin-seofields";
 import { searchConsolePlugin } from "sanity-plugin-ga-dashboard";
+import { dashboardTool } from "@sanity/dashboard";
+import { plausibleWidget } from "sanity-plugin-plausible-analytics";
+
+const PLAUSIBLE_SHARED_URL = process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_URL;
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -60,6 +64,18 @@ export default defineConfig({
       },
     }),
     searchConsolePlugin(),
+    dashboardTool({
+      name: "analytics",
+      title: "Analytics",
+      widgets: PLAUSIBLE_SHARED_URL
+        ? [
+            plausibleWidget({
+              url: PLAUSIBLE_SHARED_URL,
+              title: "Plausible Analytics",
+            }),
+          ]
+        : [],
+    }),
   ],
   schema: { types: schemaTypes },
 });
