@@ -72,6 +72,7 @@ export default defineConfig({
             plausibleWidget({
               url: PLAUSIBLE_SHARED_URL,
               title: "Plausible Analytics",
+              height: "2200px",
             }),
           ]
         : [],
