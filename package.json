@@ -23,6 +23,7 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "sanity": "^5.0.0",
+    "sanity-lighthouse-plugin": "^1.1.1",
     "sanity-plugin-ga-dashboard": "latest",
     "sanity-plugin-plausible-analytics": "^1.1.0",
     "sanity-plugin-seofields": "latest",
