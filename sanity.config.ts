@@ -7,7 +7,6 @@ import seofields, { createSeoHealthPane } from "sanity-plugin-seofields";
 import { searchConsolePlugin } from "sanity-plugin-ga-dashboard";
 import { dashboardTool } from "@sanity/dashboard";
 import { plausibleWidget } from "sanity-plugin-plausible-analytics";
-import { lighthousePlugin } from "sanity-lighthouse-plugin";
 
 const PLAUSIBLE_SHARED_URL = process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_URL;
 
@@ -71,7 +70,6 @@ export default defineConfig({
       },
     }),
     searchConsolePlugin(),
-    lighthousePlugin(),
     dashboardTool({
       name: "analytics",
       title: "Analytics",
