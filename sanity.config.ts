@@ -4,7 +4,6 @@ import { presentationTool } from "sanity/presentation";
 import { schemaTypes } from "./sanity/schema";
 import { resolve } from "./sanity/presentation/resolve";
 import seofields, { createSeoHealthPane } from "sanity-plugin-seofields";
-import { searchConsolePlugin } from "sanity-plugin-ga-dashboard";
 import { dashboardTool } from "@sanity/dashboard";
 import { plausibleWidget } from "sanity-plugin-plausible-analytics";
 
@@ -69,7 +68,6 @@ export default defineConfig({
         licenseKey: process.env.NEXT_PUBLIC_SEOFIELDS_LICENSE_KEY || "",
       },
     }),
-    searchConsolePlugin(),
     dashboardTool({
       name: "analytics",
       title: "Analytics",
