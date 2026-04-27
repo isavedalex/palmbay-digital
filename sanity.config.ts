@@ -6,7 +6,6 @@ import { resolve } from "./sanity/presentation/resolve";
 import seofields, { createSeoHealthPane } from "sanity-plugin-seofields";
 import { dashboardTool } from "@sanity/dashboard";
 import { plausibleWidget } from "sanity-plugin-plausible-analytics";
-import PageSpeedTool from "./sanity/tools/PageSpeedTool";
 
 const PLAUSIBLE_SHARED_URL = process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_URL;
 
@@ -82,13 +81,6 @@ export default defineConfig({
           ]
         : [],
     }),
-  ],
-  tools: [
-    {
-      name: "page-speed",
-      title: "Page Speed",
-      component: PageSpeedTool,
-    },
   ],
   schema: { types: schemaTypes },
 });
