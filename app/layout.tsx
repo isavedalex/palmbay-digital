@@ -5,6 +5,7 @@ import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import { SanityLive } from "@/lib/sanity/live";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const averageFont = Average({
@@ -146,6 +147,7 @@ export default async function RootLayout({
         className={`${averageFont.variable} ${nunitoSans.variable} antialiased`}
       >
         {children}
+        <Footer />
         <SanityLive />
         {isDraftMode && (
           <>
