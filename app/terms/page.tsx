@@ -15,7 +15,7 @@ export const metadata: Metadata = {
  * onboarding email, authorising the Direct Debit mandate, or paying the
  * first invoice (clause 1).
  */
-const VERSION = "Version 1.0 — 18 July 2026";
+const VERSION = "Version 1.1 — 19 July 2026";
 
 const clauses: { title: string; paras: React.ReactNode[] }[] = [
   {
@@ -60,11 +60,11 @@ const clauses: { title: string; paras: React.ReactNode[] }[] = [
     title: "4. Price and payment",
     paras: [
       <>
-        The price is the monthly amount stated at signup (our standard price is £25 per month).
-        You pay by Direct Debit, collected through GoCardless against our invoice, starting on or
-        before the day your site goes live. We are not currently VAT registered, so no VAT is
-        added; if we register for VAT in future we will give you at least 30 days' notice before
-        VAT appears on your invoices.
+        The price is the monthly amount stated in your proposal, or otherwise agreed with you in
+        writing at signup. You pay by Direct Debit, collected through GoCardless against our
+        invoice, starting on or before the day your site goes live. We are not currently VAT
+        registered, so no VAT is added; if we register for VAT in future we will give you at
+        least 30 days' notice before VAT appears on your invoices.
       </>,
     ],
   },
@@ -228,7 +228,7 @@ export default function TermsPage() {
           registered in England &amp; Wales, registered office: Flat 12a Highcliffe Hall, 16
           Eastern Esplanade, Margate CT9 2JB — &ldquo;we&rdquo;, &ldquo;us&rdquo;) and the
           business named at signup (&ldquo;you&rdquo;). It covers the website subscription
-          service we provide at the monthly price stated at signup.
+          service we provide at the monthly price stated in your proposal.
         </p>
         {clauses.map((c) => (
           <section key={c.title} className="mt-10">

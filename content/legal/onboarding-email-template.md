@@ -16,7 +16,7 @@ Brilliant — let's get {business} live. Here's how it works:
 1. **Your price:** £{price}/month, all-in. No setup fee, no minimum term —
    you can cancel any time with 30 days' notice.
 2. **The paperwork (2 minutes):** our plain-English subscription agreement is
-   here: https://palmbay.digital/terms (Version 1.0 — 18 July 2026). It says,
+   here: https://palmbay.digital/terms (Version 1.1 — 19 July 2026). It says,
    in short: you own your content and your domain, we own the code, you can
    leave whenever you like and we hand everything of yours over free.
    **Just reply YES to this email to confirm you accept it.**
@@ -39,7 +39,7 @@ Highcliffe Hall, 16 Eastern Esplanade, Margate CT9 2JB
 
 - Xero repeating invoice: £{price}/mo, **no VAT** (not registered), invoice
   footer text: "Service provided under the Website Subscription Agreement
-  v1.0 — palmbay.digital/terms".
+  v1.1 — palmbay.digital/terms".
 - GoCardless: connect to Xero (native integration); edit the mandate-request
   email template to add the same terms line.
 - On any STOP/cancellation email: acknowledge, calendar the 30-day end date,

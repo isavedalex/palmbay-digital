@@ -9,9 +9,9 @@
 
 # Website Subscription Agreement
 
-**Version 1.0 — 18 July 2026**
+**Version 1.1 — 19 July 2026**
 
-This agreement is between **Palm Bay Digital Ltd** (company no. 15996143, registered in England & Wales, registered office: Flat 12a Highcliffe Hall, 16 Eastern Esplanade, Margate CT9 2JB — "**we**", "**us**") and the business named at signup ("**you**"). It covers the website subscription service we provide at the monthly price stated at signup.
+This agreement is between **Palm Bay Digital Ltd** (company no. 15996143, registered in England & Wales, registered office: Flat 12a Highcliffe Hall, 16 Eastern Esplanade, Margate CT9 2JB — "**we**", "**us**") and the business named at signup ("**you**"). It covers the website subscription service we provide at the monthly price stated in your proposal.
 
 ## 1. Who this is for, and how you accept it
 
@@ -34,7 +34,7 @@ New pages beyond the original build, redesigns, new features (such as booking sy
 
 ## 4. Price and payment
 
-The price is the monthly amount stated at signup (our standard price is £25 per month). You pay by Direct Debit, collected through GoCardless against our invoice, starting on or before the day your site goes live. We are not currently VAT registered, so no VAT is added; if we register for VAT in future we will give you at least 30 days' notice before VAT appears on your invoices.
+The price is the monthly amount stated in your proposal, or otherwise agreed with you in writing at signup. You pay by Direct Debit, collected through GoCardless against our invoice, starting on or before the day your site goes live. We are not currently VAT registered, so no VAT is added; if we register for VAT in future we will give you at least 30 days' notice before VAT appears on your invoices.
 
 ## 5. Price changes
 
