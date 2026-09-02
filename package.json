@@ -26,7 +26,8 @@
     "sanity": "^5.0.0",
     "sanity-plugin-plausible-analytics": "^1.1.0",
     "sanity-plugin-seofields": "latest",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^22",

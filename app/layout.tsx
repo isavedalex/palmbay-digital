@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Average, Nunito_Sans } from "next/font/google";
 import Script from "next/script";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
@@ -7,17 +6,6 @@ import { SanityLive } from "@/lib/sanity/live";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
-
-const averageFont = Average({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-heading",
-});
-
-const nunitoSans = Nunito_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://palmbay.digital"),
@@ -50,7 +38,7 @@ export const metadata: Metadata = {
     title: "Website Designer Margate | Bespoke Web Design Agency UK",
     description:
       "Award-winning website design agency in Margate, Kent. Creating stunning, high-converting websites for UK businesses.",
-    images: ["/twitter-image.jpg"],
+    images: ["/og-image.jpg"],
   },
   alternates: {
     canonical: "https://palmbay.digital",
@@ -97,13 +85,13 @@ const structuredData = {
   ],
   priceRange: "££",
   sameAs: [],
+  email: "alex@palmbay.digital",
   serviceType: [
     "Website Design",
     "Web Development",
-    "Bespoke Website Design",
-    "Custom Web Development",
-    "Responsive Web Design",
-    "E-commerce Development",
+    "Website Hosting and Maintenance",
+    "Search Engine Optimisation",
+    "Google Business Profile Setup",
   ],
   knowsAbout: [
     "Web Design",
@@ -143,9 +131,7 @@ export default async function RootLayout({
           {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
         </Script>
       </head>
-      <body
-        className={`${averageFont.variable} ${nunitoSans.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
         <Footer />
         <SanityLive />
