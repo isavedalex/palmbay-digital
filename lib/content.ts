@@ -41,6 +41,13 @@ export interface WorkItem {
 
 export const work: WorkItem[] = [
   {
+    name: "Ellwood Studio",
+    description: "Private one-to-one personal training in Cliftonville. Bold, dark and built to book consultations.",
+    url: "https://ellwood.studio",
+    image: "/images/work/ellwood-studio.jpg",
+    alt: "Ellwood Studio homepage",
+  },
+  {
     name: "Cork & Capture",
     description: "Portable CO₂ recovery for breweries and wineries. Five-language site with a blog that posts itself to Google.",
     url: "https://www.corkandcapture.com",
