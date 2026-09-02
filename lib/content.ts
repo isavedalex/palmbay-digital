@@ -75,6 +75,13 @@ export const work: WorkItem[] = [
     image: "/images/work/your-bold-birth.jpg",
     alt: "Your Bold Birth homepage",
   },
+  {
+    name: "Palms Pizzeria",
+    description: "New York-style pizza by the slice in Margate and Lisbon. Menu, merch and a mailing list, all in one place.",
+    url: "https://www.palmspizzeria.com",
+    image: "/images/work/palms-pizzeria.jpg",
+    alt: "Palms Pizzeria homepage",
+  },
 ];
 
 export interface Service {
