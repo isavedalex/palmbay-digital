@@ -1,4 +1,4 @@
-import { Button } from "@relume_io/relume-ui";
+import { BrandButton } from "@/components/ui/BrandButton";
 import { RubikCubeClient } from "./RubikCubeClient";
 
 interface HeroSectionProps {
@@ -7,6 +7,8 @@ interface HeroSectionProps {
   body?: string;
   ctaLabel?: string;
   ctaUrl?: string;
+  secondaryLabel?: string;
+  secondaryUrl?: string;
 }
 
 export function HeroSection({
@@ -15,56 +17,57 @@ export function HeroSection({
   body,
   ctaLabel,
   ctaUrl,
+  secondaryLabel,
+  secondaryUrl,
 }: HeroSectionProps) {
+  const ctaIsExternal = Boolean(ctaUrl && /^https?:\/\//.test(ctaUrl));
+
   return (
     <section
-      id="relume"
-      className="min-h-screen flex items-center justify-center px-[5%] py-16 md:py-0 bg-palmbay-bluebg"
+      id="top"
+      className="flex min-h-[calc(100vh-4rem)] items-center bg-palmbay-bluebg px-[5%] py-16 md:min-h-[calc(100vh-5rem)] md:py-20"
     >
-      <div className="container">
-        <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center text-center lg:text-left">
-          <div>
-            <h1 className="mb-5 text-4xl font-bold md:mb-6 md:text-9xl lg:text-10xl text-white font-monument animate-fade-in-up animate-delay-100">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 items-center gap-x-16 gap-y-12 lg:grid-cols-[1.15fr_1fr]">
+          <div className="text-center lg:text-left">
+            {subheading && (
+              <p className="mb-4 font-formula text-sm uppercase tracking-[0.2em] text-palmbay-pink animate-fade-in-up animate-delay-100 md:mb-5">
+                {subheading}
+              </p>
+            )}
+
+            <h1 className="font-monument text-3xl leading-[1.08] text-white animate-fade-in-up animate-delay-200 md:text-5xl lg:text-6xl">
               {heading}
             </h1>
 
-            {subheading && (
-              <h2 className="md:text-md text-white font-helvetica font-light mb-4 animate-fade-in-up animate-delay-200">
-                {subheading}
-              </h2>
-            )}
-
             {body && (
-              <p className="md:text-md text-white font-helvetica font-light animate-fade-in-up animate-delay-300">
+              <p className="mx-auto mt-6 max-w-xl font-helvetica text-base font-light text-white/85 animate-fade-in-up animate-delay-300 md:text-lg lg:mx-0">
                 {body}
               </p>
             )}
 
-            {ctaLabel && ctaUrl && (
-              <div className="mt-6 flex flex-wrap gap-4 md:mt-8 text-white justify-center lg:justify-start animate-fade-in-up animate-delay-400">
-                <a
-                  href={ctaUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${ctaLabel} - Get your free website design consultation`}
-                >
-                  <Button
-                    title={`${ctaLabel} - Get your free website design consultation`}
-                    className="bg-palmbay-pink border-r-4 border-b-4 border-palmbay-darkpink rounded-lg"
-                  >
+            {(ctaLabel && ctaUrl) || (secondaryLabel && secondaryUrl) ? (
+              <div className="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in-up animate-delay-400 lg:justify-start">
+                {ctaLabel && ctaUrl && (
+                  <BrandButton href={ctaUrl} external={ctaIsExternal}>
                     {ctaLabel}
-                  </Button>
-                </a>
+                  </BrandButton>
+                )}
+                {secondaryLabel && secondaryUrl && (
+                  <BrandButton href={secondaryUrl} variant="ghost">
+                    {secondaryLabel}
+                  </BrandButton>
+                )}
               </div>
-            )}
+            ) : null}
           </div>
 
           <div
-            className="w-full flex items-center justify-center animate-scale-in animate-delay-500"
+            className="flex w-full items-center justify-center animate-scale-in animate-delay-500"
             role="img"
-            aria-label="Interactive 3D Rubik's cube animation showcasing Palm Bay Digital's web design creativity"
+            aria-label="Animated 3D Rubik's cube in Palm Bay Digital pink"
           >
-            <div className="w-64 h-64 md:w-96 md:h-96 lg:max-w-md lg:w-full lg:h-auto">
+            <div className="aspect-square w-64 md:w-96 lg:w-full lg:max-w-md">
               <RubikCubeClient />
             </div>
           </div>

@@ -29,6 +29,13 @@ module.exports = {
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
         "fade-in-down": "fadeInDown 0.6s ease-out forwards",
         "scale-in": "scaleIn 0.8s ease-out forwards",
+        marquee: "marquee 28s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
     },
   },

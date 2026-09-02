@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import { sanityFetch } from "@/lib/sanity/live";
 import { HOME_QUERY } from "@/lib/sanity/queries";
+import { hero as HERO } from "@/lib/content";
+import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/home/HeroSection";
+import { WorkSection } from "@/components/home/WorkSection";
+import { ServicesSection } from "@/components/home/ServicesSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
+import { Marquee } from "@/components/home/Marquee";
+import { StatementSection } from "@/components/home/StatementSection";
+import { ClientsSection } from "@/components/home/ClientsSection";
+import { ContactSection } from "@/components/home/ContactSection";
 
 interface HomeData {
   heading?: string;
@@ -18,16 +27,6 @@ interface HomeData {
     robots?: { index?: boolean; follow?: boolean };
   };
 }
-
-const FALLBACK: Required<
-  Pick<HomeData, "heading" | "subheading" | "body" | "ctaLabel" | "ctaUrl">
-> = {
-  heading: "PALM BAY DIGITAL",
-  subheading: "Website Designer in Margate, Kent | Bespoke Web Design Agency",
-  body: "Palm Bay Digital is a professional website design and development agency based in Margate, UK. As experienced website designers, we specialise in creating bespoke, high-converting websites for businesses across Kent and the UK. From stunning web design to custom development, we craft digital experiences that help your business stand out online. Ready to bring your vision to life? Let's create something exceptional together.",
-  ctaLabel: "Work with us",
-  ctaUrl: "https://form.typeform.com/to/UEaAB8BR",
-};
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await sanityFetch({ query: HOME_QUERY });
@@ -59,12 +58,26 @@ export default async function HomePage() {
   const home = (data as HomeData | null) ?? {};
 
   return (
-    <HeroSection
-      heading={home.heading || FALLBACK.heading}
-      subheading={home.subheading || FALLBACK.subheading}
-      body={home.body || FALLBACK.body}
-      ctaLabel={home.ctaLabel || FALLBACK.ctaLabel}
-      ctaUrl={home.ctaUrl || FALLBACK.ctaUrl}
-    />
+    <>
+      <Navbar />
+      <main>
+        <HeroSection
+        heading={home.heading || HERO.heading}
+        subheading={home.subheading || HERO.subheading}
+        body={home.body || HERO.body}
+        ctaLabel={home.ctaLabel || HERO.ctaLabel}
+        ctaUrl={home.ctaUrl || HERO.ctaUrl}
+        secondaryLabel={HERO.secondaryLabel}
+        secondaryUrl={HERO.secondaryUrl}
+      />
+      <WorkSection />
+      <ServicesSection />
+      <ProcessSection />
+      <Marquee />
+      <StatementSection />
+      <ClientsSection />
+      <ContactSection />
+      </main>
+    </>
   );
 }
