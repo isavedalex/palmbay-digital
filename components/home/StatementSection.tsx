@@ -3,7 +3,8 @@ import { statement, work } from "@/lib/content";
 
 /** The template's "Good design means better world" band: big statement + two images. */
 export function StatementSection() {
-  const [a, b] = [work[0], work[2]];
+  const a = work.find((w) => w.name === "Cork & Capture") ?? work[0];
+  const b = work.find((w) => w.name === "Palms Build.Co") ?? work[1];
   return (
     <section className="bg-white px-[5%] py-16 md:py-24">
       <div className="container mx-auto">
