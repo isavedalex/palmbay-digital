@@ -3,12 +3,14 @@ import { statement, work } from "@/lib/content";
 
 /**
  * "Small businesses deserve websites as good as the big ones": big statement
- * beside a MacBook + iPhone mock-up of two client sites, to show the work is
+ * beside a MacBook + iPhone mock-up of one client site, to show the work is
  * responsive rather than just a cropped desktop screenshot.
  */
 export function StatementSection() {
-  const laptop = work.find((w) => w.name === "Ellwood Studio") ?? work[0];
-  const phone = work.find((w) => w.name === "Palms Build.Co") ?? work[1];
+  // Same site on both devices so the band reads as "one site, every screen".
+  const site = work.find((w) => w.name === "Ellwood Studio") ?? work[0];
+  const laptop = site;
+  const phone = site;
 
   return (
     <section className="overflow-hidden bg-white px-[5%] py-16 md:py-24">
