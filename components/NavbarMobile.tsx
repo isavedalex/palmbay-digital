@@ -28,7 +28,7 @@ export function NavbarMobile({ links, cta }: { links: NavLink[]; cta: NavLink })
         <nav
           id="mobile-nav"
           aria-label="Primary"
-          className="absolute inset-x-0 top-16 border-t border-white/10 bg-palmbay-bluebg px-[5%] pb-6 pt-2 shadow-xl"
+          className="absolute left-0 right-0 top-16 border-t border-white/10 bg-palmbay-bluebg px-[5%] pb-6 pt-2 shadow-xl"
         >
           {links.map((l) => (
             <a
