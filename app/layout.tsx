@@ -5,10 +5,11 @@ import { VisualEditing } from "next-sanity/visual-editing";
 import { SanityLive } from "@/lib/sanity/live";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
 import { Footer } from "@/components/Footer";
+import { SITE_URL, absoluteUrl } from "@/lib/seo/site-url";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://palmbay.digital"),
+  metadataBase: new URL(SITE_URL),
   title:
     "Website Designer Margate | Bespoke Web Design Agency UK | Palm Bay Digital",
   description:
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
       "Website Designer Margate | Bespoke Web Design Agency UK | Palm Bay Digital",
     description:
       "Award-winning website design agency in Margate, Kent. Specialising in bespoke web design & development for UK businesses.",
-    url: "https://palmbay.digital",
+    url: SITE_URL,
     siteName: "Palm Bay Digital",
     locale: "en_GB",
     type: "website",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://palmbay.digital",
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -62,9 +63,9 @@ const structuredData = {
   name: "Palm Bay Digital",
   description:
     "Professional website design and development agency based in Margate, Kent. Specialising in bespoke web design for UK businesses.",
-  url: "https://palmbay.digital",
-  logo: "https://palmbay.digital/logo.png",
-  image: "https://palmbay.digital/og-image.jpg",
+  url: SITE_URL,
+  logo: absoluteUrl("/logo.png"),
+  image: absoluteUrl("/og-image.jpg"),
   address: {
     "@type": "PostalAddress",
     addressLocality: "Margate",

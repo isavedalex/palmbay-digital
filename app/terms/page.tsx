@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "The plain-English terms for Palm Bay Digital's monthly website subscription: what's included, pricing, cancellation, domains and data protection.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://palmbay.digital/terms" },
+  alternates: { canonical: "/terms" },
 };
 
 /**
