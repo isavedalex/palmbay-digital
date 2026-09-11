@@ -1,0 +1,25 @@
+{
+  "projectId": "c23ab7e2-9043-4117-aa5f-58688ab2be0d",
+  "pkg": "palmbay.digital",
+  "globalName": "PalmBay",
+  "shape": "package",
+  "srcDir": "components",
+  "tsconfig": ".design-sync/tsconfig.sync.json",
+  "cssEntry": ".design-sync/generated/palmbay.css",
+  "extraFonts": [
+    "public/fonts/PPMonumentExtended-Regular.woff2",
+    "public/fonts/PPFormula-Medium.woff2"
+  ],
+  "componentSrcMap": {
+    "DisableDraftMode": null
+  },
+  "overrides": {
+    "HeroSection": {
+      "cardMode": "column"
+    },
+    "SectionHeading": {
+      "cardMode": "column"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}
