@@ -41,7 +41,7 @@ export default async function GoLivePage({
             </p>
             <ul className="mt-7 space-y-3 font-helvetica text-white/90">
               {[
-                "£25/month, all in — your domain connected (new or one you already have)",
+                "£20/month, all in — your domain connected (new or one you already have)",
                 "Edit it yourself, no developer needed",
                 "Built to load fast and be found on Google",
                 "Live within days of you saying yes",

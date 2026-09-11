@@ -9,7 +9,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/studio", "/api/"],
+      // /offers and /go-live are private, link-only pages (noindex in metadata too).
+      disallow: ["/studio", "/api/", "/offers", "/go-live", "/new"],
     },
     sitemap: absoluteUrl("/sitemap.xml"),
   };

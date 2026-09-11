@@ -251,8 +251,14 @@ export default function CmsHandbookPage() {
           <h2 className="font-monument text-lg font-bold text-neutral-900">Images</h2>
           <div className="mt-3 space-y-3 leading-relaxed">
             <p>
-              Drag a photo straight onto any image box. Large photographs are fine — they are
-              resized for the web automatically, so upload the best quality you have.
+              Drag a photo straight onto any image box. Upload the best quality you have — a
+              full-size photo straight from a phone or camera is ideal. You never need to shrink
+              or compress it first: the original is kept safely, and every visitor is sent a
+              copy resized for their screen, so the site stays fast whatever you upload.
+            </p>
+            <p>
+              The only limit is an enormous one (256 megapixels — many times larger than any
+              phone photo). If a file is refused, it is almost certainly not a photograph.
             </p>
             <p>
               Every image asks for <strong>alt text</strong>: one short sentence describing what is
@@ -292,6 +298,54 @@ export default function CmsHandbookPage() {
             <p>
               Leave the <UI>Index</UI> and <UI>Follow</UI> switches on. Turning them off asks Google
               to forget the page.
+            </p>
+          </div>
+        </section>
+
+        {/* Open Graph */}
+        <section className="mt-10">
+          <h2 className="font-monument text-lg font-bold text-neutral-900">
+            The share image (Open Graph)
+          </h2>
+          <div className="mt-3 space-y-3 leading-relaxed">
+            <p>
+              When someone pastes a link to your site into WhatsApp, Facebook, Instagram, LinkedIn
+              or a text message, a little card appears: a picture, a title and a line of text.
+              That card is built from your page&rsquo;s <strong>Open Graph</strong> details, and
+              the picture comes from the <UI>Meta Image</UI> field on the <UI>SEO</UI> tab. Google
+              can use the same image beside your listing too.
+            </p>
+            <p>
+              It matters more than it looks. A link with a good photo gets opened; a link with a
+              grey box or a stretched logo gets scrolled past. It is the first thing most people
+              ever see of your business &mdash; before they have visited the site at all.
+            </p>
+            <ul className="space-y-2 pl-0">
+              <li>
+                <strong>Every page needs one.</strong> Your site launched with a share image on
+                every page. If you add a new page, add one to it &mdash; a page without one shows
+                whatever the app can find, which is usually nothing.
+              </li>
+              <li>
+                <strong>Landscape, roughly 1200 by 630 pixels.</strong> Wider than it is tall, like
+                a letterbox. Upright photos get cropped to a strip; square logos get squashed.
+              </li>
+              <li>
+                <strong>Use your best photograph, not your logo.</strong> A real photo of your
+                work, your place or your team does the job. Your name and logo already sit under
+                it in the card, so they don&rsquo;t need to be in the picture.
+              </li>
+              <li>
+                <strong>Keep the title and description honest.</strong> The card also shows the SEO
+                <strong> Title</strong> and <strong>Description</strong> from the same tab, so a
+                page whose purpose changes needs all three updated together.
+              </li>
+            </ul>
+            <p>
+              To check what people will see, paste your page&rsquo;s address into a WhatsApp
+              message to yourself. If the card looks wrong, the image or the words on the{" "}
+              <UI>SEO</UI> tab are the place to fix it. Changes can take a day or two to reach apps
+              that have already seen the old version.
             </p>
           </div>
         </section>
