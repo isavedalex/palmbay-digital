@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NewCoForm } from "@/components/new/NewCoForm";
+import { NewCoBeacon } from "@/components/new/NewCoBeacon";
 
 export const metadata: Metadata = {
   title: "Your new company, online | Palm Bay Digital",
@@ -90,6 +91,7 @@ export default async function NewCoPage({ searchParams }: { searchParams: Promis
 
   return (
     <main className="bg-palmbay-bluebg">
+      {number && <NewCoBeacon companyNumber={co?.company_number ?? number} business={legal} />}
       <section className="px-[5%] pb-12 pt-16 md:pb-16 md:pt-24">
         <div className="container mx-auto max-w-5xl">
           <p className="mb-3 font-formula text-sm uppercase tracking-[0.2em] text-palmbay-pink md:mb-4">

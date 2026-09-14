@@ -15,6 +15,17 @@ export function NewCoForm({ business, companyNumber }: { business: string; compa
   const waHref = wa ? `https://wa.me/${wa}?text=${encodeURIComponent(`Make ${business || "my new company"} live please (${companyNumber})`)}` : null;
   const mailHref = `mailto:hello@palmbay.digital?subject=${encodeURIComponent(`Make ${business || "my new company"} live`)}&body=${encodeURIComponent(`Company number: ${companyNumber}`)}`;
 
+  // Intent tracking → coldsite events project (shows on /tracking). Fire-and-forget.
+  function track(intent: "form" | "whatsapp" | "email", extra: Record<string, string> = {}) {
+    if (!companyNumber) return;
+    fetch("/api/newco-scan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ companyNumber, business, intent, ...extra }),
+      keepalive: true,
+    }).catch(() => {});
+  }
+
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setState("sending");
@@ -39,6 +50,7 @@ export function NewCoForm({ business, companyNumber }: { business: string; compa
         const j = await res.json().catch(() => ({}));
         throw new Error(j.error || "Something went wrong");
       }
+      track("form", { name: String(fd.get("name") || ""), phone: String(fd.get("phone") || "") });
       setState("done");
     } catch (err) {
       setError((err as Error).message);
@@ -72,11 +84,11 @@ export function NewCoForm({ business, companyNumber }: { business: string; compa
       </button>
       <div className="flex flex-col gap-2 pt-1 sm:flex-row">
         {waHref && (
-          <a href={waHref} className="inline-flex flex-1 items-center justify-center rounded-lg bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white">
+          <a href={waHref} onClick={() => track("whatsapp")} className="inline-flex flex-1 items-center justify-center rounded-lg bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white">
             WhatsApp us
           </a>
         )}
-        <a href={mailHref} className="inline-flex flex-1 items-center justify-center rounded-lg border border-neutral-300 px-4 py-2.5 text-sm font-semibold text-neutral-800">
+        <a href={mailHref} onClick={() => track("email")} className="inline-flex flex-1 items-center justify-center rounded-lg border border-neutral-300 px-4 py-2.5 text-sm font-semibold text-neutral-800">
           hello@palmbay.digital
         </a>
       </div>
