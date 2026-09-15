@@ -90,11 +90,13 @@ export default defineConfig({
     }),
     // Separate tab from Analytics: two unrelated iframes at different
     // heights fighting for scroll on one page isn't worth saving a tab for.
+    // Named "Rank Tracking", not "SEO", so it doesn't read as a twin of the
+    // seofields "SEO Health" pane (on-page fields vs. where the site ranks).
     dashboardTool({
-      name: "seo",
-      title: "SEO",
+      name: "rank-tracking",
+      title: "Rank Tracking",
       widgets: OPENSEO_EMBED_URL
-        ? [openSeoWidget({ url: OPENSEO_EMBED_URL, title: "OpenSEO" })]
+        ? [openSeoWidget({ url: OPENSEO_EMBED_URL, title: "Rank Tracking" })]
         : [],
     }),
     // The standalone `sanity-plugin-openseo` package (~/claude-code) does the
