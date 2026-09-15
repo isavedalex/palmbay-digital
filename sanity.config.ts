@@ -26,6 +26,12 @@ export default defineConfig({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
   basePath: "/studio",
+  // Content Releases is a paid-tier feature Sanity surfaces as a nav tab on
+  // every plan. Clients publish one page at a time, so the tab is only a
+  // distraction (and an upsell) — hide it. Scheduled drafts ride on the same
+  // machinery and would be equally confusing, so they go too.
+  releases: { enabled: false },
+  scheduledDrafts: { enabled: false },
   plugins: [
     structureTool({
       structure: (S) =>
