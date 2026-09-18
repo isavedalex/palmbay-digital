@@ -17,7 +17,12 @@ export const HOME_QUERY = groq`
         description,
         "image": select(imageType == "url" => imageUrl, image.asset->url)
       },
-      twitter { card, title },
+      twitter {
+        card,
+        title,
+        description,
+        "image": select(imageType == "url" => imageUrl, image.asset->url)
+      },
       robots { index, follow }
     }
   }

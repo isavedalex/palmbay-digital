@@ -23,7 +23,12 @@ interface HomeData {
     description?: string;
     canonicalUrl?: string;
     openGraph?: { title?: string; description?: string; image?: string };
-    twitter?: { card?: "summary" | "summary_large_image"; title?: string };
+    twitter?: {
+      card?: "summary" | "summary_large_image";
+      title?: string;
+      description?: string;
+      image?: string;
+    };
     robots?: { index?: boolean; follow?: boolean };
   };
 }
@@ -51,7 +56,8 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: seo.twitter?.card || "summary_large_image",
       title: seo.twitter?.title || seo.title,
-      images: [seo.openGraph?.image || "/og-image.jpg"],
+      description: seo.twitter?.description || seo.description,
+      images: [seo.twitter?.image || seo.openGraph?.image || "/og-image.jpg"],
     },
     robots: {
       index: seo.robots?.index !== false,
