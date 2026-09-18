@@ -59,17 +59,22 @@ export const metadata: Metadata = {
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "WebDesignAgency",
+  // ProfessionalService is a LocalBusiness subtype; "WebDesignAgency" is not a
+  // schema.org type and Google discards the whole block when it sees one.
+  "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#business`,
   name: "Palm Bay Digital",
   description:
-    "Professional website design and development agency based in Margate, Kent. Specialising in bespoke web design for UK businesses.",
+    "Small business web design studio in Margate, Kent. Website design, hosting, updates and being found on Google for businesses across Kent and the UK.",
   url: SITE_URL,
-  logo: absoluteUrl("/logo.png"),
   image: absoluteUrl("/og-image.jpg"),
+  telephone: "+447891173891",
+  email: "alex@palmbay.digital",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Margate",
     addressRegion: "Kent",
+    postalCode: "CT9",
     addressCountry: "GB",
   },
   geo: {
@@ -77,16 +82,18 @@ const structuredData = {
     latitude: "51.3813",
     longitude: "1.3862",
   },
+  hasMap: "https://maps.google.com/maps?cid=3554470029172708408",
+  sameAs: ["https://maps.google.com/maps?cid=3554470029172708408"],
   areaServed: [
     { "@type": "City", name: "Margate" },
     { "@type": "City", name: "Broadstairs" },
     { "@type": "City", name: "Ramsgate" },
-    { "@type": "State", name: "Kent" },
+    { "@type": "City", name: "Canterbury" },
+    { "@type": "AdministrativeArea", name: "Thanet" },
+    { "@type": "AdministrativeArea", name: "Kent" },
     { "@type": "Country", name: "United Kingdom" },
   ],
   priceRange: "££",
-  sameAs: [],
-  email: "alex@palmbay.digital",
   serviceType: [
     "Website Design",
     "Web Development",
@@ -97,16 +104,10 @@ const structuredData = {
   knowsAbout: [
     "Web Design",
     "Website Development",
-    "UI/UX Design",
-    "Frontend Development",
+    "Local SEO",
     "React Development",
     "Next.js Development",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: "1",
-  },
 };
 
 export default async function RootLayout({
