@@ -13,12 +13,12 @@ export const site = {
 
 export const nav = {
   links: [
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "Process", href: "#process" },
-    { label: "Contact", href: "#contact" },
+    { label: "Services", href: "/#services" },
+    { label: "Work", href: "/#work" },
+    { label: "Process", href: "/#process" },
+    { label: "Contact", href: "/#contact" },
   ],
-  cta: { label: "Let’s talk", href: "#contact" },
+  cta: { label: "Let’s talk", href: "/#contact" },
 };
 
 export const hero = {

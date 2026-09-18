@@ -9,7 +9,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-palmbay-bluebg/95 px-[5%] backdrop-blur supports-[backdrop-filter]:bg-palmbay-bluebg/85">
       <div className="container mx-auto flex h-16 items-center justify-between md:h-20">
-        <a href="#top" className="font-monument text-sm tracking-wide text-white md:text-base" aria-label={`${site.name} home`}>
+        <a href="/" className="font-monument text-sm tracking-wide text-white md:text-base" aria-label={`${site.name} home`}>
           PALM BAY <span className="text-palmbay-pink">DIGITAL</span>
         </a>
 
