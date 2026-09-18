@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 /**
  * 404 page — from the "404 error page design" Claude Design project. Uses the
- * site's own tokens (bluebg / pink / Monument / Formula) and components; the
- * global Footer comes from the root layout so the design's mini footer is omitted.
+ * site's own tokens (bluebg / pink / Monument / Formula) and components. The
+ * design's own contact strip sits above the global Footer from the root layout.
  */
 export default function NotFound() {
   return (
@@ -48,6 +48,14 @@ export default function NotFound() {
           </div>
         </div>
       </main>
+      <div className="border-t border-white/20 bg-palmbay-bluebg px-[5%] py-6 font-helvetica text-sm text-white">
+        <div className="container mx-auto flex flex-wrap justify-between gap-x-8 gap-y-3">
+          <span>Palm Bay Digital · Margate, Kent</span>
+          <a href="mailto:hello@palmbay.digital" className="underline underline-offset-[3px]">
+            hello@palmbay.digital
+          </a>
+        </div>
+      </div>
     </>
   );
 }
