@@ -69,7 +69,7 @@ const structuredData = {
   url: SITE_URL,
   image: absoluteUrl("/og-image.jpg"),
   telephone: "+447891173891",
-  email: "alex@palmbay.digital",
+  email: "hello@palmbay.digital",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Margate",

@@ -6,7 +6,7 @@
 
 export const site = {
   name: "Palm Bay Digital",
-  email: "alex@palmbay.digital",
+  email: "hello@palmbay.digital",
   location: "Margate, Kent",
   tagline: "Websites for small businesses that want to be found.",
 };

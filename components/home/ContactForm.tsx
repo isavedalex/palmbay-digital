@@ -17,8 +17,8 @@ export function ContactForm() {
         <h3 className="font-monument text-2xl text-neutral-950">Thanks, got it 🎉</h3>
         <p className="mt-3 font-helvetica text-neutral-600">
           We’ll reply within a working day. If it’s urgent, email{" "}
-          <a href="mailto:alex@palmbay.digital" className="underline underline-offset-2">
-            alex@palmbay.digital
+          <a href="mailto:hello@palmbay.digital" className="underline underline-offset-2">
+            hello@palmbay.digital
           </a>
           .
         </p>

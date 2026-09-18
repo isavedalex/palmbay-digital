@@ -204,7 +204,7 @@ const clauses: { title: string; paras: React.ReactNode[] }[] = [
       <>
         <strong>Notices:</strong> formal notices under this agreement (including cancellation)
         are valid by email — ours to the address you gave at signup, yours to
-        alex@palmbay.digital.
+        hello@palmbay.digital.
       </>,
       <>
         <strong>Law:</strong> this agreement is governed by the law of England and Wales, and the

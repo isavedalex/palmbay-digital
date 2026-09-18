@@ -57,7 +57,7 @@ export async function submitContact(_prev: ContactState, formData: FormData): Pr
     await resend.emails.send({ from, to, replyTo: email, subject, text });
   } catch (err) {
     console.error("[contact] resend failed", err);
-    return { status: "error", message: "Couldn’t send right now. Please email alex@palmbay.digital instead." };
+    return { status: "error", message: "Couldn’t send right now. Please email hello@palmbay.digital instead." };
   }
 
   return { status: "success" };

@@ -389,10 +389,10 @@ export default function CmsHandbookPage() {
           <p className="leading-relaxed">
             Stuck, or want something changed that this guide doesn&rsquo;t cover? Email{" "}
             <a
-              href="mailto:alex@palmbay.digital"
+              href="mailto:hello@palmbay.digital"
               className="font-semibold text-palmbay-darkpink underline underline-offset-2"
             >
-              alex@palmbay.digital
+              hello@palmbay.digital
             </a>{" "}
             describing what you&rsquo;d like and which page it&rsquo;s on — that is always enough to
             get started.
