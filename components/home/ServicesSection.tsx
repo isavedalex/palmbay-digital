@@ -17,7 +17,7 @@ export function ServicesSection() {
           <SectionHeading
             eyebrow="What we do"
             title="Everything your website needs, in one place"
-            intro="Design, build, hosting and search, looked after by the same people who built it."
+            intro="Website design, build, hosting and SEO, looked after by the same people who built it."
           />
           <BrandButton href="#contact" variant="dark" className="shrink-0 self-start md:self-auto">
             Start a project

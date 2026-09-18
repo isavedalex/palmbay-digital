@@ -9,8 +9,8 @@ export function WorkSection() {
       <div className="container mx-auto">
         <SectionHeading
           eyebrow="Featured work"
-          title="Real sites, for real local businesses"
-          intro="A few of the sites we’ve designed, built and look after."
+          title="Web design for real local businesses"
+          intro="A few of the sites we’ve designed, built and look after, from Margate to Lisbon."
         />
 
         <ul className="mt-10 grid grid-cols-1 gap-8 md:mt-14 md:grid-cols-2 md:gap-10">

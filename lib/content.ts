@@ -23,8 +23,8 @@ export const nav = {
 
 export const hero = {
   heading: "Websites for small businesses that want to be found.",
-  subheading: "Web design studio in Margate, Kent",
-  body: "We design and build fast, good-looking websites for local businesses, then host them, keep them updated and make sure Google can find them. One simple monthly subscription, no agency runaround.",
+  subheading: "Web designer in Margate, Kent",
+  body: "We’re a small web design studio in Margate. We design and build fast, good-looking websites for small businesses across Kent, then host them, keep them updated and make sure Google can find them. No agency runaround.",
   ctaLabel: "Let’s talk",
   ctaUrl: "#contact",
   secondaryLabel: "See our work",
@@ -139,12 +139,12 @@ export const marquee = ["Built in Margate, Kent", "Simple, fast, findable", "Web
 
 export const statement = {
   heading: "Small businesses deserve websites as good as the big ones.",
-  body: "We started Palm Bay Digital because too many great local businesses were stuck with slow, dated sites or none at all. Good design, quick loading and being findable on Google shouldn’t be reserved for companies with a marketing department.",
+  body: "We started Palm Bay Digital because too many great local businesses were stuck with slow, dated sites or none at all. Good web design, quick loading and being findable on Google shouldn’t be reserved for companies with a marketing department.",
 };
 
 export const clients = {
   heading: "Who we work with",
-  intro: "From sole traders to funded start-ups, mostly across Kent and the UK.",
+  intro: "From sole traders to funded start-ups, mostly in Thanet and across Kent.",
   groups: [
     {
       title: "Trades & services",
@@ -163,7 +163,7 @@ export const clients = {
 
 export const contact = {
   heading: "Let’s talk",
-  body: "Tell us a little about your business and what you’re after. We’ll reply within a working day, usually with a few ideas and a plan for a preview.",
+  body: "Tell us a little about your business and what you’re after. We’re based in Margate and work with small businesses across Kent and the UK. We’ll reply within a working day, usually with a few ideas and a plan for a preview.",
   email: site.email,
   location: "Margate, Kent CT9",
 };
