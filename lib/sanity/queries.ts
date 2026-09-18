@@ -12,7 +12,11 @@ export const HOME_QUERY = groq`
       title,
       description,
       canonicalUrl,
-      openGraph { title, description, image },
+      openGraph {
+        title,
+        description,
+        "image": select(imageType == "url" => imageUrl, image.asset->url)
+      },
       twitter { card, title },
       robots { index, follow }
     }
