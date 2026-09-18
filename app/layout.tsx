@@ -83,7 +83,11 @@ const structuredData = {
     longitude: "1.3862",
   },
   hasMap: "https://maps.google.com/maps?cid=3554470029172708408",
-  sameAs: ["https://maps.google.com/maps?cid=3554470029172708408"],
+  sameAs: [
+    "https://maps.google.com/maps?cid=3554470029172708408",
+    "https://www.facebook.com/profile.php?id=61584315687257",
+    "https://www.instagram.com/palmbay.digital/",
+  ],
   areaServed: [
     { "@type": "City", name: "Margate" },
     { "@type": "City", name: "Broadstairs" },
