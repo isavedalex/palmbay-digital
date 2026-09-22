@@ -3,7 +3,7 @@ import { structureTool } from "sanity/structure";
 import { presentationTool } from "sanity/presentation";
 import { schemaTypes } from "./sanity/schema";
 import { resolve } from "./sanity/presentation/resolve";
-import seofields, { createSeoHealthPane } from "sanity-plugin-seofields";
+import { seoFields, altText } from "@palmbay/sanity-seo";
 import { dashboardTool } from "@sanity/dashboard";
 import { plausibleWidget } from "sanity-plugin-plausible-analytics";
 import { openSeoWidget } from "./sanity/dashboard/openSeoWidget";
@@ -39,15 +39,6 @@ export default defineConfig({
           .title("Content")
           .items([
             S.listItem()
-              .title("SEO Health")
-              .child(
-                createSeoHealthPane(S, {
-                  licenseKey:
-                    process.env.NEXT_PUBLIC_SEOFIELDS_LICENSE_KEY || "",
-                }),
-              ),
-            S.divider(),
-            S.listItem()
               .title("Home Page")
               .child(
                 S.document()
@@ -76,11 +67,10 @@ export default defineConfig({
       },
       resolve,
     }),
-    seofields({
-      healthDashboard: {
-        licenseKey: process.env.NEXT_PUBLIC_SEOFIELDS_LICENSE_KEY || "",
-      },
-    }),
+    // SEO fields + "SEO Health" tab (no licence key) and the "Alt Text" tab.
+    // The AI buttons post to /api/seo-ai (app/api/seo-ai/route.ts).
+    seoFields({ titleSuffix: "Palm Bay Digital", baseUrl: SITE_URL }),
+    altText(),
     dashboardTool({
       name: "analytics",
       title: "Analytics",

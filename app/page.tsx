@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { sanityFetch } from "@/lib/sanity/live";
 import { HOME_QUERY } from "@/lib/sanity/queries";
+import { buildSeoMeta, type SeoFieldsValue } from "@palmbay/sanity-seo/next";
+import { SITE_URL, absoluteUrl } from "@/lib/seo/site-url";
 import { hero as HERO } from "@/lib/content";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -18,52 +20,27 @@ interface HomeData {
   body?: string;
   ctaLabel?: string;
   ctaUrl?: string;
-  seo?: {
-    title?: string;
-    description?: string;
-    canonicalUrl?: string;
-    openGraph?: { title?: string; description?: string; image?: string };
-    twitter?: {
-      card?: "summary" | "summary_large_image";
-      title?: string;
-      description?: string;
-      image?: string;
-    };
-    robots?: { index?: boolean; follow?: boolean };
-  };
+  seo?: SeoFieldsValue | null;
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   const { data } = await sanityFetch({ query: HOME_QUERY });
   const seo = (data as HomeData | null)?.seo;
-  if (!seo) return {};
+  // Nothing set in the Studio yet: let the layout's static metadata stand.
+  if (!seo?.title && !seo?.description) return {};
 
-  return {
-    title: seo.title,
-    description: seo.description,
-    alternates: seo.canonicalUrl ? { canonical: seo.canonicalUrl } : undefined,
-    openGraph: {
-      title: seo.openGraph?.title || seo.title,
-      description: seo.openGraph?.description || seo.description,
-      // Fall back to the static file so og:image is never dropped — Next.js
-      // replaces (not merges) the layout's openGraph block.
-      images: [
-        seo.openGraph?.image
-          ? { url: seo.openGraph.image, width: 1200, height: 630 }
-          : { url: "/og-image.jpg", width: 1200, height: 630 },
-      ],
+  // Reads robots.noIndex / openGraph.imageType etc. exactly as stored, and
+  // falls back OG → meta image → the static /og-image.jpg so og:image is
+  // never dropped (Next.js replaces, not merges, the layout's openGraph).
+  return buildSeoMeta({
+    seo,
+    baseUrl: SITE_URL,
+    path: "/",
+    defaults: {
+      image: absoluteUrl("/og-image.jpg"),
+      siteName: "Palm Bay Digital",
     },
-    twitter: {
-      card: seo.twitter?.card || "summary_large_image",
-      title: seo.twitter?.title || seo.title,
-      description: seo.twitter?.description || seo.description,
-      images: [seo.twitter?.image || seo.openGraph?.image || "/og-image.jpg"],
-    },
-    robots: {
-      index: seo.robots?.index !== false,
-      follow: seo.robots?.follow !== false,
-    },
-  };
+  });
 }
 
 export default async function HomePage() {

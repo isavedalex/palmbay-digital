@@ -1,4 +1,5 @@
 import { defineType, defineField } from "sanity";
+import { requiredSeo } from "@palmbay/sanity-seo";
 
 export default defineType({
   name: "home",
@@ -48,6 +49,7 @@ export default defineType({
       name: "seo",
       title: "SEO",
       type: "seoFields",
+      validation: requiredSeo,
     }),
   ],
   preview: {

@@ -10,8 +10,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title:
-    "Website Designer Margate | Bespoke Web Design Agency UK | Palm Bay Digital",
+  // Template: page titles from the Studio's SEO tab omit the brand and get
+  // " | Palm Bay Digital" appended here (the seoFields titleSuffix option
+  // shows editors the same suffix in the search preview).
+  title: {
+    default:
+      "Website Designer Margate | Bespoke Web Design Agency UK | Palm Bay Digital",
+    template: "%s | Palm Bay Digital",
+  },
   description:
     "Award-winning website design agency in Margate, Kent. Specialising in bespoke web design & development for UK businesses. Expert website designers creating stunning, high-converting sites. Get a free consultation today.",
   keywords:
