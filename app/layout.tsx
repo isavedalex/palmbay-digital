@@ -5,7 +5,9 @@ import { VisualEditing } from "next-sanity/visual-editing";
 import { SanityLive } from "@/lib/sanity/live";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
 import { Footer } from "@/components/Footer";
-import { SITE_URL, absoluteUrl } from "@/lib/seo/site-url";
+import { SITE_URL } from "@/lib/seo/site-url";
+import { JsonLd } from "@palmbay/sanity-seo/next";
+import { siteGraph } from "@/lib/seo/jsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -63,63 +65,6 @@ export const metadata: Metadata = {
   },
 };
 
-const structuredData = {
-  "@context": "https://schema.org",
-  // ProfessionalService is a LocalBusiness subtype; "WebDesignAgency" is not a
-  // schema.org type and Google discards the whole block when it sees one.
-  "@type": "ProfessionalService",
-  "@id": `${SITE_URL}/#business`,
-  name: "Palm Bay Digital",
-  description:
-    "Small business web design studio in Margate, Kent. Website design, hosting, updates and being found on Google for businesses across Kent and the UK.",
-  url: SITE_URL,
-  image: absoluteUrl("/og-image.jpg"),
-  telephone: "+447891173891",
-  email: "hello@palmbay.digital",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Margate",
-    addressRegion: "Kent",
-    postalCode: "CT9",
-    addressCountry: "GB",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "51.3813",
-    longitude: "1.3862",
-  },
-  hasMap: "https://maps.google.com/maps?cid=3554470029172708408",
-  sameAs: [
-    "https://maps.google.com/maps?cid=3554470029172708408",
-    "https://www.facebook.com/profile.php?id=61584315687257",
-    "https://www.instagram.com/palmbay.digital/",
-  ],
-  areaServed: [
-    { "@type": "City", name: "Margate" },
-    { "@type": "City", name: "Broadstairs" },
-    { "@type": "City", name: "Ramsgate" },
-    { "@type": "City", name: "Canterbury" },
-    { "@type": "AdministrativeArea", name: "Thanet" },
-    { "@type": "AdministrativeArea", name: "Kent" },
-    { "@type": "Country", name: "United Kingdom" },
-  ],
-  priceRange: "££",
-  serviceType: [
-    "Website Design",
-    "Web Development",
-    "Website Hosting and Maintenance",
-    "Search Engine Optimisation",
-    "Google Business Profile Setup",
-  ],
-  knowsAbout: [
-    "Web Design",
-    "Website Development",
-    "Local SEO",
-    "React Development",
-    "Next.js Development",
-  ],
-};
-
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -128,12 +73,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        {/* Structured data: a plain server-rendered <script>, never next/script —
+            that only lands in the RSC payload and a plain fetch sees nothing.
+            Site-wide nodes here; WebPage + BreadcrumbList come from each page.
+            `palmbay-structured-data` §2. */}
+        <JsonLd data={siteGraph()} />
         <Script
           async
           src="https://plausible.io/js/pa-Wdr-AVVxsaQSnCUhuhsFT.js"

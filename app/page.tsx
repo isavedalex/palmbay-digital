@@ -3,6 +3,8 @@ import { sanityFetch } from "@/lib/sanity/live";
 import { HOME_QUERY } from "@/lib/sanity/queries";
 import { buildSeoMeta, type SeoFieldsValue } from "@palmbay/sanity-seo/next";
 import { SITE_URL, absoluteUrl } from "@/lib/seo/site-url";
+import { JsonLd } from "@palmbay/sanity-seo/next";
+import { pageGraph } from "@/lib/seo/jsonLd";
 import { hero as HERO } from "@/lib/content";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/home/HeroSection";
@@ -49,6 +51,13 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd
+        data={pageGraph({
+          path: "/",
+          title: home.heading || HERO.heading,
+          description: home.subheading || HERO.subheading,
+        })}
+      />
       <Navbar />
       <main>
         <HeroSection
