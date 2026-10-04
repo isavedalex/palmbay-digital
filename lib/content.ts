@@ -48,11 +48,11 @@ export const work: WorkItem[] = [
     alt: "Ellwood Studio homepage",
   },
   {
-    name: "Cork & Capture",
-    description: "Portable CO₂ recovery for breweries and wineries. Five-language site with a blog that posts itself to Google.",
-    url: "https://www.corkandcapture.com",
-    image: "/images/work/cork-and-capture.jpg",
-    alt: "Cork & Capture homepage",
+    name: "Prunadelica",
+    description: "Sustainable garden care and planting design in Margate. Photo-led, calm and built to start garden conversations.",
+    url: "https://prunadelica.com",
+    image: "/images/work/prunadelica.jpg",
+    alt: "Prunadelica homepage",
   },
   {
     name: "Minnow",
@@ -77,10 +77,10 @@ export const work: WorkItem[] = [
   },
   {
     name: "Palms Pizzeria",
-    description: "New York-style pizza by the slice in Margate and Lisbon. Menu, merch and a mailing list, all in one place.",
-    url: "https://www.palmspizzeria.com",
+    description: "New York-style pizza by the slice in Margate. A local page built to turn \"pizza near me\" searches into orders.",
+    url: "https://www.palmspizzeria.com/margate",
     image: "/images/work/palms-pizzeria.jpg",
-    alt: "Palms Pizzeria homepage",
+    alt: "Palms Pizzeria Margate page",
   },
 ];
 
