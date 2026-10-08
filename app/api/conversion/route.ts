@@ -39,7 +39,18 @@ export async function POST(req: Request) {
   const to = process.env.CONTACT_TO_EMAIL;
   const from = process.env.CONTACT_FROM_EMAIL || "Palm Bay Digital <onboarding@resend.dev>";
 
+  const failed = NextResponse.json(
+    { ok: false, error: "Couldn’t send right now. Please email hello@palmbay.digital instead." },
+    { status: 500 },
+  );
+
+  // In production a missing key is an error, not a fake success, so leads
+  // can't be silently swallowed. Locally the lead is just logged.
   if (!apiKey || !to) {
+    if (process.env.NODE_ENV === "production") {
+      console.error(`[conversion] RESEND_API_KEY/CONTACT_TO_EMAIL not set — lead NOT emailed\n${subject}\n${lines.join("\n")}`);
+      return failed;
+    }
     console.log(`[conversion] (no RESEND_API_KEY/CONTACT_TO_EMAIL)\n${subject}\n${lines.join("\n")}`);
     return NextResponse.json({ ok: true });
   }
@@ -47,10 +58,12 @@ export async function POST(req: Request) {
   try {
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);
-    await resend.emails.send({ from, to, replyTo: email, subject, text: lines.join("\n") });
+    // The SDK reports API rejections in `error` rather than throwing.
+    const { error } = await resend.emails.send({ from, to, replyTo: email, subject, text: lines.join("\n") });
+    if (error) throw error;
   } catch (err) {
-    console.error("[conversion] resend failed", err);
-    return NextResponse.json({ ok: false, error: "Couldn’t send right now — please call us." }, { status: 500 });
+    console.error(`[conversion] resend failed — lead NOT emailed\n${subject}\n${lines.join("\n")}`, err);
+    return failed;
   }
 
   return NextResponse.json({ ok: true });
