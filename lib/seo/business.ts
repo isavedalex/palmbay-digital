@@ -15,7 +15,9 @@ export const BUSINESS = {
   description:
     "Small business web design studio in Margate, Kent. Website design, hosting, updates and being found on Google for businesses across Kent and the UK.",
   url: SITE_URL,
-  logo: absoluteUrl("/icon.png"),
+  /** Must be a real file (public/logo.png, 512×512): a 404 logo is what Ahrefs
+   *  reports as "Organization schema missing or incomplete". */
+  logo: { url: absoluteUrl("/logo.png"), width: 512, height: 512 },
   image: absoluteUrl("/og-image.jpg"),
   phone: { display: "07891 173891", e164: "+447891173891" },
   email: "hello@palmbay.digital",

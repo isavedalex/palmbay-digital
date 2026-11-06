@@ -24,6 +24,18 @@ export function ContactSection() {
                 <span className="text-lg">{contact.location}</span>
               </li>
             </ul>
+
+            <p className="mt-10 font-helvetica text-sm text-white/70">
+              Every site is on a simple monthly plan. Read the{" "}
+              <a href="/terms" className="underline underline-offset-2 hover:text-white">
+                subscription terms
+              </a>{" "}
+              and see{" "}
+              <a href="/cms-handbook" className="underline underline-offset-2 hover:text-white">
+                how you edit your own website
+              </a>
+              .
+            </p>
           </div>
 
           <ContactForm />

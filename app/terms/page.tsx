@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Website Subscription Agreement | Palm Bay Digital",
+export const metadata: Metadata = pageMetadata({
+  path: "/terms",
+  title: "Website Subscription Agreement",
   description:
     "The plain-English terms for Palm Bay Digital's monthly website subscription: what's included, pricing, cancellation, domains and data protection.",
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/terms" },
-};
+});
 
 /**
  * Published edition of the Website Subscription Agreement. The canonical

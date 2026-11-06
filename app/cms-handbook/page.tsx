@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo/pageMetadata";
 
-export const metadata: Metadata = {
-  title: "Editing Your Website | Palm Bay Digital",
+export const metadata: Metadata = pageMetadata({
+  path: "/cms-handbook",
+  title: "Editing Your Website",
   description:
     "A plain-English guide to editing your own website in Sanity Studio: signing in, finding your pages, publishing changes, images, alt text and the SEO tab.",
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/cms-handbook" },
-};
+});
 
 /**
  * The client-facing CMS handbook. Written to suit every site we build on the

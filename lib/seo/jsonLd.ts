@@ -24,13 +24,22 @@ export function businessNode(): JsonLdNode {
     description: BUSINESS.description,
     telephone: BUSINESS.phone.e164,
     email: BUSINESS.email,
+    contactPoint: {
+      telephone: BUSINESS.phone.e164,
+      email: BUSINESS.email,
+      contactType: "customer service",
+      areaServed: "GB",
+      availableLanguage: ["English"],
+    },
+    knowsAbout: [...BUSINESS.knowsAbout],
     priceRange: BUSINESS.priceRange,
     address: BUSINESS.address,
     geo: BUSINESS.geo,
     hasMap: BUSINESS.googleBusinessProfileUrl,
     areaServed: [...BUSINESS.areasServed],
     sameAs: [BUSINESS.googleBusinessProfileUrl, ...BUSINESS.socialUrls],
-    inLanguage: "en-GB",
+    // No inLanguage: not a LocalBusiness property (schema.org validation error).
+    // The language lives on the WebSite and WebPage nodes.
     hasOfferCatalog: {
       name: "Services",
       items: BUSINESS.services.map((s) => ({ itemOffered: ref(ids.service(SITE_URL, s.slug)) })),
@@ -41,7 +50,7 @@ export function businessNode(): JsonLdNode {
 /** Site-wide nodes rendered once from the root layout. */
 export function siteGraph(): JsonLdNode {
   return graph([
-    { ...businessNode(), knowsAbout: [...BUSINESS.knowsAbout] },
+    businessNode(),
     webSiteJsonLd({
       name: BUSINESS.name,
       url: SITE_URL,

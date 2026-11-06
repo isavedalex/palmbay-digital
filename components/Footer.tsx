@@ -25,6 +25,9 @@ export function Footer() {
           <a href="/terms" className="hover:text-white">
             Subscription terms
           </a>
+          <a href="/cms-handbook" className="hover:text-white">
+            Editing your website
+          </a>
           <a href={`mailto:${site.email}`} className="hover:text-white">
             {site.email}
           </a>
